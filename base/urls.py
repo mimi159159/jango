@@ -17,6 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from rest_framework_simplejwt.views import TokenObtainPairView
+
 urlpatterns = [
     path('', views.index),
+     path('book/',views.books ),
+    path('book/<int:id>',views.books),
+path('login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+path('secret/',views.secret),
 ]
+
